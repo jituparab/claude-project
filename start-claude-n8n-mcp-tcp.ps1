@@ -20,6 +20,7 @@ function Wait-ForPort {
 
 # Step 1: Launch MCP server in TCP mode
 Write-Log "Starting n8n-mcp with TCP on port 37229"
+$env:MCP_MODE = "tcp"
 $env:MCP_USE_TCP = "true"
 $env:MCP_TCP_PORT = "37229"
 Start-Process powershell -ArgumentList 'npx n8n-mcp' -WindowStyle Normal
